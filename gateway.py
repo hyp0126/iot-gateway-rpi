@@ -18,7 +18,7 @@ client.connect(Broker, 1883, 60)
 client.loop_start()
 
 while True:
-    input = str(bluetoothSerial.readline())
+    input = str(bluetoothSerial.readline(), "ascii")
     print(input)
     inputs = input.split('/')
     topic = '/'.join(inputs[0:len(inputs)-1])
