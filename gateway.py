@@ -8,8 +8,12 @@ import serial
 from time import sleep
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
+import os
 
 Broker = "192.168.2.62"
+while os.system("ls /dev/rfcomm0"):
+    print("wait rfcomm0")
+    sleep(1000)
 
 bluetoothSerial = serial.Serial( "/dev/rfcomm0", baudrate=9600 )
  
