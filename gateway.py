@@ -10,7 +10,8 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import os
 
-Broker = "192.168.2.62"
+Broker = "localhost"
+
 while os.system("ls /dev/rfcomm0"):
     print("wait rfcomm0")
     sleep(1000)
