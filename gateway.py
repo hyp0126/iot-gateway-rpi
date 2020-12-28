@@ -19,6 +19,7 @@ while os.system("ls /dev/rfcomm0"):
 bluetoothSerial = serial.Serial( "/dev/rfcomm0", baudrate=9600 )
  
 client = mqtt.Client()
+client.username_pw_set(username=”user”,password=”1234”)
 client.connect(Broker, 1883, 60)
 client.loop_start()
 
