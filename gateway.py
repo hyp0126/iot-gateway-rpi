@@ -1,3 +1,4 @@
+
 #rpi: python3
 #HC-06: Paring password: 1234
 #sudo apt-get install python-serial
@@ -10,6 +11,12 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import os
 import constants
+from subprocess import check_output
+from re import findall
+
+def get_cputemp():
+    temp = check_output(["vcgencmd","measure_temp"]).decode("UTF-8")
+    return(findall("\d+\.\d+",temp)[0])
 
 Broker = constants.MQTT_HOST
 
@@ -31,3 +38,8 @@ while True:
     topic = '/'.join(inputs[0:len(inputs)-1])
     client.publish(topic, inputs[len(inputs)-1])
     print(inputs)
+    topic = "home/rpi/cputemperature"
+    temp = get_cputemp()
+    client.publish(topic, temp)
+    print(topic+'/'+temp)
+
