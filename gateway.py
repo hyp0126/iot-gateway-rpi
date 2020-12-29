@@ -39,7 +39,7 @@ while True:
     topic = '/'.join(inputs[0:len(inputs)-1])
     client.publish(topic, inputs[len(inputs)-1])
     print(inputs)
-    topic = "home/rpi/cputemperature"
+    topic = "home/gateway/cputemp"
     temp = get_cputemp()
     client.publish(topic, temp)
     print(topic+'/'+temp)
