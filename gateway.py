@@ -22,9 +22,10 @@ Broker = constants.MQTT_HOST
 
 while os.system("ls /dev/rfcomm0"):
     print("wait rfcomm0")
-    sleep(1000)
+    sleep(1)
 
 bluetoothSerial = serial.Serial( "/dev/rfcomm0", baudrate=9600 )
+print("rfcomm0 connected")
  
 client = mqtt.Client()
 client.username_pw_set(username=constants.MQTT_USER, password=constants.MQTT_PASSWORD)
