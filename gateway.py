@@ -9,8 +9,9 @@ from time import sleep
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import os
+import constants
 
-Broker = "localhost"
+Broker = constants.MQTT_HOST
 
 while os.system("ls /dev/rfcomm0"):
     print("wait rfcomm0")
@@ -19,7 +20,7 @@ while os.system("ls /dev/rfcomm0"):
 bluetoothSerial = serial.Serial( "/dev/rfcomm0", baudrate=9600 )
  
 client = mqtt.Client()
-client.username_pw_set(username="user", password="1234")
+client.username_pw_set(username=constants.MQTT_USER, password=constants.MQTT_PASSWORD)
 client.connect(Broker, 1883, 60)
 client.loop_start()
 
