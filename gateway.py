@@ -4,6 +4,7 @@
 #sudo apt-get install python-serial
 #sudo pip3 install paho-mqtt
 #Connect BT: sudo rfcomm connect hci0 98:D3:32:20:6C:CE
+#TSL: port 8883
 
 import serial
 from time import sleep
@@ -29,7 +30,9 @@ print("rfcomm0 connected")
  
 client = mqtt.Client()
 client.username_pw_set(username=constants.MQTT_USER, password=constants.MQTT_PASSWORD)
-client.connect(Broker, 1883, 60)
+client.tls_set('certs/ca.crt')
+#client.connect(Broker, 1883, 60)
+client.connect(Broker, 8883, 60)
 client.loop_start()
 
 while True:
