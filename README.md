@@ -1,5 +1,5 @@
 # Iot-gateway-rpi
-
+### Raspberry Pi
 <p align="center">
 <img src="https://github.com/hyp0126/Iot-gateway-rpi/blob/main/RPI_CAM_SG90_2.jpg?raw=true" width="700" />
 </p>
@@ -11,3 +11,8 @@
 3. UNO BT -> <b>rpi (BT to MQTT)</b> -> (TLS/SSL) -> GCP (Compute Engine: Mosquitto) -> GCP (Node-RED / https)
 
 4. <b>rpi (Node-RED)</b> -> GCP (Mosquitto) -> rpi SG90 (Servo)
+
+### node-RED
+<p align="center">
+<img src="https://github.com/hyp0126/Iot-gateway-rpi/blob/main/node-RED/node-RED.png?raw=true" width="700" />
+</p>
