@@ -59,13 +59,17 @@ if not pi.connected:
     
 # connect BT serial
 # Wait until being connected
-while os.system("ls /dev/rfcomm0"):
-    print("wait rfcomm0")
-    sleep(1)
+def connectBluetoothSerial():
+    while os.system("ls /dev/rfcomm0"):
+        print("wait rfcomm0")
+        sleep(1)
 
-bluetoothSerial = serial.Serial("/dev/rfcomm0", baudrate=9600)
-print("rfcomm0 connected")
- 
+    btSerial = serial.Serial("/dev/rfcomm0", baudrate=9600)
+    print("rfcomm0 connected")
+    return btSerial 
+
+bluetoothSerial = connectBluetoothSerial()
+
 # MQTT Broker settings
 def on_connect(client, userdata, flags, rc):
     print("MQTT Connected")
@@ -126,6 +130,8 @@ while True:
             print(topic+'/'+temp)
     except KeyboardInterrupt:
         break
+    except serial.serialutil.SerialException:
+        bluetoothSerial = connectBluetoothSerial()
     
 print("Exit")
 # Stop Servo
