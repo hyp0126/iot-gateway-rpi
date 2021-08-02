@@ -1,17 +1,29 @@
-# Iot-gateway-rpi
+# Home IoT Project (Iot Devices)
+
+## Introduction
+The website shows room temperature and humidity, and control LED in a house.<br/>
+Add Camera with servo motors (X, Y axis)<br/>
+
+## IoT Gateway
 ### Raspberry Pi
 <p align="center">
 <img src="https://github.com/hyp0126/Iot-gateway-rpi/blob/main/RPI_CAM_SG90_2.jpg?raw=true" width="700" />
 </p>
 
-1. ARDUINO UNO + Temperature sensor + HC-06(Bluetooth) -> <b>rpi (BT to MQTT)</b> -> rpi (Mosquitto, Node-RED) 
+## Technologies
+WiFi, Bluetooth, USART<br/>
+Camera, Servo motor<br/>
+MQTT + TLS/SSL
 
-2. ARDUINO UNO + Temperature sensor + HC-06(Bluetooth) -> <b>rpi (BT to MQTT)</b> -> GCP (Ubuntu: Mosquitto, Node-RED) 
+## IoT Devices
+### NodeMCU(ESP8266), Arduino Uno
+https://github.com/hyp0126/iot-device
 
-3. UNO BT -> <b>rpi (BT to MQTT)</b> -> (TLS/SSL) -> GCP (Compute Engine: Mosquitto) -> GCP (Node-RED / https)
+## Web Server
+Backend(AWS EC2): mosquitto, Express (https://github.com/hyp0126/react-home-iot)<br/>
+Frontend(GCP VM): React, NGINX (https://github.com/hyp0126/react-home-iot)<br/>
 
-4. <b>rpi (Node-RED)</b> -> GCP (Mosquitto) -> rpi SG90 (Servo)
-
+## Test
 ### node-RED
 <p align="center">
 <img src="https://github.com/hyp0126/Iot-gateway-rpi/blob/main/node-RED/node-RED.png?raw=true" width="700" />
