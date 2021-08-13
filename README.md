@@ -2,7 +2,7 @@
 
 ## Introduction
 The website shows room temperature and humidity, and control LED in a house.<br/>
-Add Camera with servo motors (X, Y axis)<br/>
+Camera with servo motors (X, Y axis)<br/>
 
 ## IoT Gateway
 ### Raspberry Pi
@@ -11,17 +11,17 @@ Add Camera with servo motors (X, Y axis)<br/>
 </p>
 
 ## Technologies
-WiFi, Bluetooth, USART<br/>
-Camera, Servo motor<br/>
-MQTT + TLS/SSL
+* WiFi, Bluetooth, USART<br/>
+* Camera, Servo motor<br/>
+* MQTT + TLS/SSL
 
 ## IoT Devices
 ### NodeMCU(ESP8266), Arduino Uno
-https://github.com/hyp0126/iot-device
+* IoT Device Project: https://github.com/hyp0126/iot-device
 
 ## Web Server
-Backend(AWS EC2): mosquitto, Express (https://github.com/hyp0126/react-home-iot)<br/>
-Frontend(GCP VM): React, NGINX (https://github.com/hyp0126/react-home-iot)<br/>
+* Backend(AWS EC2): mosquitto, Express (https://github.com/hyp0126/react-home-iot)<br/>
+* Frontend(GCP VM): React, NGINX (https://github.com/hyp0126/react-home-iot)<br/>
 
 ## Test
 ### node-RED
